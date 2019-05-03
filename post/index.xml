@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 May 2019 16:33:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 May 2019 16:48:30 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo搭建个人博客</title>
+      <link>http://localhost:1313/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 03 May 2019 16:48:30 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;使用hugo搭建自己的博客&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>大话西游之大圣娶亲</title>
