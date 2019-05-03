@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hexo 个人博客的搭建与配置 - Autora -the blog of snowman</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="snowman" /><meta name="description" content="这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Hexo 个人博客的搭建与配置" />
+<meta property="og:description" content="这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/" />
+<meta property="article:published_time" content="2019-05-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-01T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Hexo 个人博客的搭建与配置">
+<meta itemprop="description" content="这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。">
+
+
+<meta itemprop="datePublished" content="2019-05-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="993">
+
+
+
+<meta itemprop="keywords" content="tutorial," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hexo 个人博客的搭建与配置"/>
+<meta name="twitter:description" content="这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">SNOWMAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">SNOWMAN</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hexo 个人博客的搭建与配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-01 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"> 计算机 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#一-在github中创建一个新的repository-然后将github库与本机进行连接">一、在github中创建一个新的repository，然后将github库与本机进行连接。</a></li>
+<li><a href="#二-安装node-js-npm-hexo">二、安装Node.js、npm、hexo</a></li>
+<li><a href="#三-创建初始的博客">三、创建初始的博客</a></li>
+<li><a href="#四-安装自定义风格的主题">四、安装自定义风格的主题</a>
+<ul>
+<li><a href="#4-1-选择主题">4.1 选择主题</a></li>
+<li><a href="#4-2-外接评论和浏览服务">4.2 外接评论和浏览服务</a></li>
+<li><a href="#4-3-进一步私人化">4.3 进一步私人化</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。</p>
+
+<h3 id="一-在github中创建一个新的repository-然后将github库与本机进行连接">一、在github中创建一个新的repository，然后将github库与本机进行连接。</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git config --global user.name &#39;snowman-st&#39;
+$ git config --global user.email &#39;snowmanxk@qq.com&#39;
+$ ssh-keygen -t rsa -C &#39;snowmanxk@qq.com&#39;</pre></td></tr></table>
+</div>
+</div>
+<p>​   将生成的公钥id_rsa.pub复制到github上即可。</p>
+
+<p>​   使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ssh git@github.com</code></pre></td></tr></table>
+</div>
+</div>
+<p>​   进行验证，是否连接成功。</p>
+
+<h3 id="二-安装node-js-npm-hexo">二、安装Node.js、npm、hexo</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install node.js
+$ pip isntall npm
+$ npm install -g hexo-cli</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="三-创建初始的博客">三、创建初始的博客</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hexo init myblog</code></pre></td></tr></table>
+</div>
+</div>
+<p>​   此举会生成一个名为myblog的文件夹，然后我们进入到该文件夹下面进行网站的创建和配置。</p>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hexo new Create
+hexo g
+hexo s</pre></td></tr></table>
+</div>
+</div>
+<p>​   此时可以通过localhost:4000访问网站</p>
+
+<p>​   接下来，配置网站，在myblog下面的_config.yml中，加入如下配置：</p>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">deploy:
+    type: git
+    repo: https://github.com/snowman-st/snowman-st.github.io.git
+    branch: master</pre></td></tr></table>
+</div>
+</div>
+<p>​   安装github的部署插件：</p>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">npm install hexo-deployer-git --save</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hexo clean
+hexo g
+hexo d</pre></td></tr></table>
+</div>
+</div>
+<p>​   成功后可以通过 snowman-st.github.io访问网站</p>
+
+<h3 id="四-安装自定义风格的主题">四、安装自定义风格的主题</h3>
+
+<p>​   这个过程可以有，看个人执念。在调试的过程中使用:</p>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hexo s</pre></td></tr></table>
+</div>
+</div>
+<p>​   来在本地：locahost:4000端口启动一个服务，用来实时监控自己所做的修改。</p>
+
+<h4 id="4-1-选择主题">4.1 选择主题</h4>
+
+<p>​   到hexo themes的网站上去挑选一个自己喜欢的风格的主题。</p>
+
+<p>​   然后就git clone到本地：</p>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git clone git@github.com:dongyuanxin/theme-bmw.git themes/bmw</pre></td></tr></table>
+</div>
+</div>
+<p>​   然后会发现themes文件夹下面多个个bmw的主题文件夹。接下来，只需要将_config.yml中的theme设置成bmw即可。</p>
+
+<p>个人认为还不错的一些主题：</p>
+
+<p>​   Melody</p>
+
+<p>​</p>
+
+<h4 id="4-2-外接评论和浏览服务">4.2 外接评论和浏览服务</h4>
+
+<p>​   进入leancloud.cn注册一个免费账户。leancloud是国内领先的移动服务端整体解决方案提供商。为移动应用开发者提供稳定可依赖的后端云服务，包括存储、账号管理、社交分享、推送、应用统计等以及相关的技术支持和服务。</p>
+
+<p>​   创建应用(开发版)-&gt;进入到新创建的应用下，创建两个class,一个命名为：Comment,一个命名为：Timer。Comment设置为限制写入，Timer设置为无限制。然后找到属于自己的appid和appkey,复制下来，在themes/bmw/_config.yml中进行替换。</p>
+
+<h4 id="4-3-进一步私人化">4.3 进一步私人化</h4>
+
+<p>​   此时博客所有的功能都可以正常使用了，对页面上不喜欢的功能可以在文件中的相应位置删除，或者在_config.yml中通过功能开关进行控制。</p>
+
+<p>设计logo，主页设计。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">snowman</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-05-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tutorial/">tutorial</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%BC%96%E8%80%85%E5%BF%83%E8%AF%AD/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">编者心语</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+   
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">snowman</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

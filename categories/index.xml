@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Even - A super concise theme for Hugo</title>
+    <title>Categories on Autora -the blog of snowman</title>
     <link>http://localhost:1313/categories/</link>
-    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
+    <description>Recent content in Categories on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Fri, 03 May 2019 15:54:59 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>计算机</title>
+      <link>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+      <pubDate>Fri, 03 May 2019 15:54:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>电影</title>
+      <link>http://localhost:1313/categories/%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Thu, 02 May 2019 16:33:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E7%94%B5%E5%BD%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>http://localhost:1313/categories/reading/</link>
+      <pubDate>Thu, 02 May 2019 15:39:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/categories/reading/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

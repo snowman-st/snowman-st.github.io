@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Even - A super concise theme for Hugo</title>
+    <title>Posts on Autora -the blog of snowman</title>
     <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 03 May 2019 15:54:59 +0800</lastBuildDate>
@@ -18,6 +18,42 @@
       
       <guid>http://localhost:1313/post/test/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>大话西游之大圣娶亲</title>
+      <link>http://localhost:1313/post/%E5%A4%A7%E8%AF%9D%E8%A5%BF%E6%B8%B8%E4%B9%8B%E5%A4%A7%E5%9C%A3%E5%A8%B6%E4%BA%B2/</link>
+      <pubDate>Thu, 02 May 2019 16:33:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%A4%A7%E8%AF%9D%E8%A5%BF%E6%B8%B8%E4%B9%8B%E5%A4%A7%E5%9C%A3%E5%A8%B6%E4%BA%B2/</guid>
+      <description>&lt;p&gt;好多人把这部电影奉为经典&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>破坏之王</title>
+      <link>http://localhost:1313/post/%E7%A0%B4%E5%9D%8F%E4%B9%8B%E7%8E%8B/</link>
+      <pubDate>Thu, 02 May 2019 16:02:25 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%A0%B4%E5%9D%8F%E4%B9%8B%E7%8E%8B/</guid>
+      <description>&lt;p&gt;星爷饰演了送外卖的阿银邂逅了练空手道的钟丽缇（阿丽），被阿丽没来由的吻后，自生情愫。由于太过弱小，遭到空手道教练的羞辱，此后发奋习武&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编者心语</title>
+      <link>http://localhost:1313/post/%E7%BC%96%E8%80%85%E5%BF%83%E8%AF%AD/</link>
+      <pubDate>Thu, 02 May 2019 15:39:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%BC%96%E8%80%85%E5%BF%83%E8%AF%AD/</guid>
+      <description>&lt;p&gt;谨以此献给我的母亲&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo 个人博客的搭建与配置</title>
+      <link>http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。&lt;/p&gt;</description>
     </item>
     
   </channel>
