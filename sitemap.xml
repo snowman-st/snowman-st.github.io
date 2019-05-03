@@ -3,13 +3,44 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-05-03T16:48:30+08:00</lastmod>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-05-03T16:48:30+08:00</lastmod>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/%E4%BD%BF%E7%94%A8windows%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%89%A7%E8%A1%8C%E6%89%B9%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
+    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -21,25 +52,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-05-03T16:48:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-05-03T16:48:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/tutorial/</loc>
-    <lastmod>2019-05-03T16:48:30+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2019-05-03T16:48:30+08:00</lastmod>
     <priority>0</priority>
   </url>
