@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Pytorch基础操作 - Autora -the blog of snowman</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="snowman" /><meta name="description" content="pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Pytorch基础操作" />
+<meta property="og:description" content="pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" />
+<meta property="article:published_time" content="2019-05-04T16:19:29&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-04T16:19:29&#43;08:00"/>
+
+<meta itemprop="name" content="Pytorch基础操作">
+<meta itemprop="description" content="pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。">
+
+
+<meta itemprop="datePublished" content="2019-05-04T16:19:29&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-04T16:19:29&#43;08:00" />
+<meta itemprop="wordCount" content="1584">
+
+
+
+<meta itemprop="keywords" content="编程语言,深度学习框架," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pytorch基础操作"/>
+<meta name="twitter:description" content="pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">SNOWMAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">SNOWMAN</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Pytorch基础操作</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-04 </span>
+        <div class="post-category">
+            <a href="/categories/pytorch/"> pytorch </a>
+            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"> 基础知识 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#一-tensor的定义">一、tensor的定义</a>
+<ul>
+<li><a href="#1-创建">1、创建</a></li>
+<li><a href="#2-数据类型及类型转化">2、数据类型及类型转化</a></li>
+<li><a href="#3-tensor与普通数据的转换">3、tensor与普通数据的转换</a></li>
+</ul></li>
+<li><a href="#二-tensor的逻辑运算">二、tensor的逻辑运算</a></li>
+<li><a href="#三-数学运算">三、数学运算</a>
+<ul>
+<li><a href="#1-torch-matmul-和torch-bmm">1、torch.matmul   和torch.bmm</a></li>
+<li><a href="#2-eq">2、eq()</a></li>
+</ul></li>
+<li><a href="#四-拼接-压缩等维度操作">四、拼接、压缩等维度操作</a>
+<ul>
+<li><a href="#1-stack">1、stack</a></li>
+<li><a href="#2-cat">2、cat</a></li>
+<li><a href="#3-squeeze">3、squeeze</a></li>
+</ul></li>
+<li><a href="#五-自动求导">五、自动求导</a>
+<ul>
+<li><a href="#1-数据类型">1、数据类型</a></li>
+<li><a href="#2-运算">2、运算</a></li>
+<li><a href="#3-variable和parameter">3、Variable和Parameter</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。</p>
+
+<h2 id="一-tensor的定义">一、tensor的定义</h2>
+
+<h3 id="1-创建">1、创建</h3>
+
+<p>torch的基础数据类型也是Tensor。创建tensor的操作和numpy类似</p>
+
+<p>通过torch.Tensor()即可创建一个张量，此时等效torch.FloatTensor();即默认创建的是float类型的tensor。而使用torch.tensor()创建出来的tensor就是输入时的模样。</p>
+
+<h3 id="2-数据类型及类型转化">2、数据类型及类型转化</h3>
+
+<p>数据类型有：</p>
+
+<p>tensor.FloatTensor
+tensor.ByteTensor
+tensor.CharTensor
+tensor.ShortTensor
+tensor.IntTensor
+torch.LongTensor</p>
+
+<p>这些数据类型在CPU和GPU上都有，在CPU和GPU之间的转换也很方便，从CPU上转化到GPU上，只需 ：a.cuda()即可；如果有多块GPU的话，还可用a.to(device),device = torch.device(&lsquo;cuda:1&rsquo;)这种样式的转化。</p>
+
+<p>而不同数据类型之间的转换也很方便，a.float()即可将a变成一个float类型的tensor。</p>
+
+<h3 id="3-tensor与普通数据的转换">3、tensor与普通数据的转换</h3>
+
+<p>对于0维tensor标量，或者只有一个元素的张量，可以通过item()取得其值。</p>
+
+<p>对于多维tensor张量a，使用a.numpy()即可将其转换为numpy的数据类型，但是需要注意的是只有CPU上的tensor才可以直接转换成numpy。</p>
+
+<p>将普通数据转换成tensor的过程也就是创建tensor的过程，对于numpy类型的数据b转化成tensor a：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">b</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="二-tensor的逻辑运算">二、tensor的逻辑运算</h2>
+
+<p>特别需要说明的是在进行逻辑运算之前，运算的双方需要转换成相同的数据类型，否则得到的运算结果可能有误。可以使用a.type_as(b)进行这种转换。</p>
+
+<p>在tensor上可以进行&gt;、&lt;、==的大小比较。</p>
+
+<p>也可以进行&amp;、| 的运算，进行的是二进制的按位的与或运算。</p>
+
+<h2 id="三-数学运算">三、数学运算</h2>
+
+<h3 id="1-torch-matmul-和torch-bmm">1、torch.matmul   和torch.bmm</h3>
+
+<ul>
+<li>torch.matmul(ten1,ten2)</li>
+</ul>
+
+<p>这个矩阵乘法可以用在存在batch维度的时候</p>
+
+<p>ten1.shape = [256,200,64]</p>
+
+<p>ten2.shape = [256,64,1]</p>
+
+<p>则  torch.matmul(ten1,ten2).shape  =  [256,200,1]</p>
+
+<ul>
+<li>torch.bmm(ten1,ten2)</li>
+</ul>
+
+<p>这个矩阵乘法也是可以用在存在batch维度的时候</p>
+
+<p>ten1.shape = [256,200,64]</p>
+
+<p>ten2.shape = [256,64,1]</p>
+
+<p>则  torch.bmm(ten1,ten2).shape  =  [256,200,1]</p>
+
+<ul>
+<li>区别：</li>
+</ul>
+
+<p>二者得到的计算结果的精度不一样，推荐使用bmm</p>
+
+<h3 id="2-eq">2、eq()</h3>
+
+<p>使用==来判断两个tensor中相同元素的个数有时候会得到不正确的结果，所以最好使用a.eq(b).cpu().sum()来进行运算。</p>
+
+<h2 id="四-拼接-压缩等维度操作">四、拼接、压缩等维度操作</h2>
+
+<h3 id="1-stack">1、stack</h3>
+
+<p>使用stack进行拼接时，会新增出来一个维度</p>
+
+<h3 id="2-cat">2、cat</h3>
+
+<p>使用cat进行tensor拼接时，可以指定在某一个维度上进行拼接，拼接后的结果的维度不发生变化。</p>
+
+<h3 id="3-squeeze">3、squeeze</h3>
+
+<p>当一个tensor的某一维度上的size为1时，可以使用squeeze（）</p>
+
+<p>例如：a.shape = [2,1,3]</p>
+
+<p>则 a.squeeze(1).shape = [2,3]</p>
+
+<p>当然可以使用unsqueeze()来扩展某一维度</p>
+
+<p>a.unsqueeze(3).shape = [2,1,3,1]</p>
+
+<h2 id="五-自动求导">五、自动求导</h2>
+
+<h3 id="1-数据类型">1、数据类型</h3>
+
+<p>只有float型的tensor才可以将requires_grad设置为true.</p>
+
+<h3 id="2-运算">2、运算</h3>
+
+<p>当一个requires_grad=True的tensor和一个等于False的tensor运算之后产生的是requies_grad= true 的tensor。两个为False的运算后仍为false</p>
+
+<h3 id="3-variable和parameter">3、Variable和Parameter</h3>
+
+<p>其中Variable 是 torch.autograd  中的一个类，初始化后可以用作模型参数，但是默认的requires_grad=False</p>
+
+<p>Parameter实际上是Variable的一个子类，但是它在torch.nn中，通常我们在模型中需要一个自定义参数并希望将她用于梯度求导时，可以使用Parameter，这个生成的参数会存在于模型的参数中，比如我们使用net.named_parameter()时会发现它跟模型其他参数一起打印出来了。与Variable不同的是该参数的默认的requires_grad的值为True。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">snowman</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-05-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+          <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/">深度学习框架</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E4%BD%BF%E7%94%A8windows%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%89%A7%E8%A1%8C%E6%89%B9%E5%91%BD%E4%BB%A4/">
+            <span class="next-text nav-default">使用windows脚本文件执行批命令</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+   
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">snowman</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
