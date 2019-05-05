@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Torchtext进行文本数据预处理 - Autora -the blog of snowman</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="snowman" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/torchtext%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Torchtext进行文本数据预处理" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/torchtext%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" />
+<meta property="article:published_time" content="2019-05-05T19:03:40&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-05T19:03:40&#43;08:00"/>
+
+<meta itemprop="name" content="Torchtext进行文本数据预处理">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2019-05-05T19:03:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-05T19:03:40&#43;08:00" />
+<meta itemprop="wordCount" content="1960">
+
+
+
+<meta itemprop="keywords" content="pytorch," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Torchtext进行文本数据预处理"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">SNOWMAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">SNOWMAN</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Torchtext进行文本数据预处理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-05 </span>
+        <div class="post-category">
+            <a href="/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/"> NLP代码篇 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#一-torchtext的基本api介绍">一、torchtext的基本API介绍</a></li>
+<li><a href="#二-一个使用torchtext进行文本预处理的实例">二、一个使用torchtext进行文本预处理的实例</a>
+<ul>
+<li><a href="#1-使用pandas先分析一遍数据-对数据进行初步的清洗和统计">1、使用pandas先分析一遍数据，对数据进行初步的清洗和统计</a></li>
+<li><a href="#2-对清洗后的数据集按需划分成训练集-测试集-验证集-保存为csv格式">2、对清洗后的数据集按需划分成训练集，测试集，验证集，保存为csv格式</a></li>
+<li><a href="#3-构建文本域">3、构建文本域：</a></li>
+<li><a href="#4-读取数据">4、读取数据</a></li>
+<li><a href="#5-根据数据构建词典">5、根据数据构建词典</a></li>
+<li><a href="#6-构建迭代器">6、构建迭代器</a></li>
+<li><a href="#7-生成batch数据">7、生成batch数据</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="一-torchtext的基本api介绍">一、torchtext的基本API介绍</h2>
+
+<p><img src="https://img-blog.csdn.net/20180318140824368?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L3UwMTI0MzYxNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述" /></p>
+
+<p>torchtext.data</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">torchtext.data.Example : 用来表示一个样本，数据+标签
+torchtext.vocab.Vocab: 词汇表相关
+torchtext.data.Datasets: 数据集类，__getitem__ 返回 Example实例
+torchtext.data.Field : 用来定义字段的处理方法（文本字段，标签字段）
+    创建 Example时的 预处理
+    batch 时的一些处理操作。
+torchtext.data.Iterator: 迭代器，用来生成 batch</pre></td></tr></table>
+</div>
+</div>
+<p>对于Filed的具体用法（text和label都需要使用该API进行转化）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">torchtext</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">sequential</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">use_vocab</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">init_token</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eos_token</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fix_length</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">preprocessing</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">postprocessing</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">tokenize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tokenizer_language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">include_lengths</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">pad_token</span><span class="o">=</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">,</span> <span class="n">unk_token</span><span class="o">=</span><span class="s1">&#39;&lt;unk&gt;&#39;</span><span class="p">,</span> <span class="n">pad_first</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">truncate_first</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">is_target</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里我挑几个实际应用时常设置的参数进行说明：</p>
+
+<ul>
+<li>sequential:是否将数据表示成序列，如果是False不能使用分词；一般对于text使用True，对于label使用False；</li>
+<li>use_vocab:如果数据已经是数值类型，比如label已经是0,1之类的数据，则设置为False</li>
+<li>fix_length:  需要设置，长度不足则进行填充，长度超过则进行裁剪</li>
+<li>tokenize:  如果文本是中文的话，需要定义一个分词函数；函数输入是整个batch的文本，输出是分词后的列表</li>
+<li>batch_first: 设置为True后，之后从Iterator中输出的数值化后的数据是BatchFirst的；如果不设置，则后来用的时候需要转置一下。</li>
+<li>include_lengths: 设置为ture之后，每个batch返回的是：（（batchx,batchlen),batchy),如果模型中要用到LSTM的pack_padded形式的forword运算，则在这里需要设置为True，并且，在后面构造Iterator时还要对每个batch进行排序。默认是False，对应batch返回的是（batchx,batchy)</li>
+<li>stop_words:接受一个停用词列表</li>
+</ul>
+
+<h2 id="二-一个使用torchtext进行文本预处理的实例">二、一个使用torchtext进行文本预处理的实例</h2>
+
+<p>原始数据为：train.csv   test.csv; 每条数据是一行，标签是文本信息。</p>
+
+<h3 id="1-使用pandas先分析一遍数据-对数据进行初步的清洗和统计">1、使用pandas先分析一遍数据，对数据进行初步的清洗和统计</h3>
+
+<p>可以使用pandas里面的value_counts()函数对标签进行统计，确定数据集是否平衡</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">clean_str</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;[^A-Za-z0-9(),!?\&#39;\`]&#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;s&#34;</span><span class="p">,</span> <span class="s2">&#34; </span><span class="se">\&#39;</span><span class="s2">s&#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;m&#34;</span><span class="p">,</span> <span class="s2">&#34; am &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39; &#34;</span><span class="p">,</span><span class="s2">&#34;  &#34;</span><span class="p">,</span><span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;ve&#34;</span><span class="p">,</span> <span class="s2">&#34; have &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;n\&#39;t&#34;</span><span class="p">,</span> <span class="s2">&#34; not&#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;re&#34;</span><span class="p">,</span> <span class="s2">&#34; </span><span class="se">\&#39;</span><span class="s2">re&#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;d&#34;</span><span class="p">,</span> <span class="s2">&#34; </span><span class="se">\&#39;</span><span class="s2">d&#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\&#39;ll&#34;</span><span class="p">,</span> <span class="s2">&#34; will&#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;,&#34;</span><span class="p">,</span> <span class="s2">&#34;  &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;!&#34;</span><span class="p">,</span> <span class="s2">&#34;  &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\.&#34;</span><span class="p">,</span> <span class="s2">&#34;  &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\(&#34;</span><span class="p">,</span> <span class="s2">&#34;  &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\)&#34;</span><span class="p">,</span> <span class="s2">&#34;  &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\?&#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;\s{2,}&#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">get_seq_length</span><span class="p">():</span>
+    <span class="n">text</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">()</span>
+    <span class="n">seq_len</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">seq_len</span><span class="p">)</span>
+    <span class="n">sorted_length</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># print(sorted_length)</span>
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">sorted_length</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>        <span class="c1">#绘制的是句子长度与句子数之间的关系</span>
+    <span class="n">seq_num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">seq_num</span><span class="p">)</span>
+    <span class="n">fre_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">seq_num</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">yi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="n">fre_y</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">fre_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">yi</span><span class="p">))</span>
+    <span class="n">fre_y</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">fre_y</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fre_y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="2-对清洗后的数据集按需划分成训练集-测试集-验证集-保存为csv格式">2、对清洗后的数据集按需划分成训练集，测试集，验证集，保存为csv格式</h3>
+
+<h3 id="3-构建文本域">3、构建文本域：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torchtext.data</span> <span class="kn">as</span> <span class="nn">td</span>
+<span class="kn">from</span> <span class="nn">torchtext.data.vocab</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="c1">#如果数据集中是中文数据，则tokenize使用chinese_cut</span>
+<span class="c1">#def chinese_cut(x):</span>
+<span class="c1">#   res = [w for w in jieba.lcut(x)]</span>
+<span class="c1">#   return res</span>
+<span class="n">TEXT</span> <span class="o">=</span> <span class="n">TD</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">sequential</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">tokenize</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span><span class="n">fix_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">LBAEL</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">sequential</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>说明：</p>
+
+<ul>
+<li>use_vocab=True,一般情况下，对于文本域是需要设置为True的，因为要在其上构建一个词典，而对于标签，如果本身已经是0,1这种形式，则需要将此参数设置成False，否则也会生成一个关于标签的词典。其实如果面对的是单标签分类的问题，构建一个标签词典也是很方便地。</li>
+<li>tokenize:通常我们会自定义一个满足自己需求的标记化函数，如对句子长度进行裁剪，对句子进行清洗、分词等、</li>
+</ul>
+
+<h3 id="4-读取数据">4、读取数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">torchtext.data</span> <span class="kn">import</span> <span class="n">TabularDataset</span>
+
+<span class="n">train_data</span><span class="p">,</span><span class="n">dev_data</span> <span class="o">=</span> <span class="n">TabularDataset</span><span class="o">.</span><span class="n">splits</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="n">train</span><span class="o">=</span><span class="s1">&#39;train.csv&#39;</span><span class="p">,</span><span class="n">validation</span><span class="o">=</span><span class="s1">&#39;dev.csv&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span><span class="n">skip_header</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">fields</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;review&#39;</span><span class="p">,</span><span class="n">TEXT</span><span class="p">),(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span><span class="n">LABEL</span><span class="p">)])</span>
+
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">TabularDataset</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;data/test.csv&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span><span class="n">skip_header</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">fields</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;review&#39;</span><span class="p">,</span><span class="n">TEXT</span><span class="p">)])</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>可以使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>    <span class="c1">#打印出训练数据的属性，进行数据核对检查</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">reivew</span><span class="p">)</span>    <span class="c1">#打印出训练集中第十条数据</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="5-根据数据构建词典">5、根据数据构建词典</h3>
+
+<p>无外部词向量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">TEXT</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">review</span><span class="p">,</span><span class="n">max_size</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span><span class="n">min_freq</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>有外部词向量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cache</span> <span class="o">=</span> <span class="s1">&#39;.vector_cache&#39;</span> 
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">cache</span><span class="p">):</span> 
+
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span> 
+
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">Vectors</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;myvector/glove/glove.6B.200d.txt&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
+
+<span class="n">TEXT</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">review</span><span class="p">,</span> <span class="n">vectors</span><span class="o">=</span><span class="n">vectors</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后保存下本词汇表对应的词向量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">embedding</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span><span class="o">.</span><span class="n">vectors</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;embedings.npy&#39;</span><span class="p">,</span><span class="n">embedding</span><span class="p">)</span>      <span class="c1">#保存下来，以便使数据处理过程与后续训练过程分离</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>若要查看词典信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">vocab</span> <span class="o">=</span> <span class="n">TEXT</span><span class="o">.</span><span class="n">vocab</span>
+<span class="k">print</span><span class="p">(</span><span class="n">vocab</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">vocab</span><span class="o">.</span><span class="n">itos</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">vocab</span><span class="o">.</span><span class="n">stoi</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">])</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="6-构建迭代器">6、构建迭代器</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">train_iter</span><span class="p">,</span><span class="n">dev_iter</span> <span class="o">=</span> <span class="n">BucketIterator</span><span class="o">.</span><span class="n">splits</span><span class="p">((</span><span class="n">train</span><span class="p">,</span><span class="n">devdata</span><span class="p">),</span><span class="n">sort_key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">review</span><span class="p">),</span><span class="n">batch_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span><span class="n">sort</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">sort_within_batch</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">test_iter</span> <span class="o">=</span> <span class="n">Iterator</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">),</span><span class="n">device</span><span class="o">=</span><span class="n">dev</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">sort_within_batch</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>说明：</p>
+
+<ul>
+<li>迭代器内部有个参数train,默认为True，在处理测试数据时一定要将其设置为False，否则测试数据集将会被shuffle;这里设置shuffle=False也行。</li>
+<li>实际上从迭代器中输出的已经实现了word到id的映射了</li>
+<li>sort_within_batch参数是针对lstm需要进行pack_padded的操作时需要用到的，因为输入应该是按照句子长度排序后的batch</li>
+</ul>
+
+<h3 id="7-生成batch数据">7、生成batch数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">BatchWrapper</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dl</span><span class="p">,</span> <span class="n">x_var</span><span class="p">,</span> <span class="n">y_var</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dl</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_var</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_var</span> <span class="o">=</span> <span class="n">dl</span><span class="p">,</span> <span class="n">x_var</span><span class="p">,</span> <span class="n">y_var</span>
+        <span class="c1"># 传入自变量x列表和因变量y列表</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dl</span><span class="p">:</span>
+            <span class="c1"># 在这个封装中只有一个自变量</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_var</span><span class="p">)</span> 
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_var</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">y_var</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_vars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span> <span class="c1"># 把所有因变量cat成一个向量</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">feat</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_vars</span><span class="p">]</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="nb">float</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">))</span>
+                <span class="k">yield</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">x</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dl</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">train_batch</span> <span class="o">=</span> <span class="n">BatchWrapper</span><span class="p">(</span><span class="n">train_iter</span><span class="p">,</span><span class="s1">&#39;review&#39;</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+<span class="n">dev_batch</span> <span class="o">=</span> <span class="n">BatchWrapper</span><span class="p">(</span><span class="n">dev_iter</span><span class="p">,</span><span class="s1">&#39;review&#39;</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
+
+<span class="n">test_batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">test_iter</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">())</span><span class="o">.</span><span class="n">review</span>  <span class="c1">#这种取值得方法并不推荐，因为只是一次性测试所有测试数据，有时候测试数据大的情况下，需要一个batch一个batch的将其取出，此时用BatchWrapper比较好，但是千万注意在设置Iterator时不能shuffle掉测试集</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">snowman</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-05-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/pytorch/">pytorch</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/">
+            <span class="next-text nav-default">Pytorch中in Place操作的含义</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+   
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">snowman</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

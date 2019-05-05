@@ -3,19 +3,44 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-05-05T18:23:03+08:00</lastmod>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-05-05T18:23:03+08:00</lastmod>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</loc>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-05-05T18:23:03+08:00</lastmod>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/torchtext%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/pytorch/</loc>
+    <lastmod>2019-05-05T19:03:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -27,19 +52,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-05-05T18:23:03+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/pytorch/</loc>
     <lastmod>2019-05-05T18:23:03+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
+    <loc>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2019-05-05T18:23:03+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -49,12 +68,6 @@
     <lastmod>2019-05-04T16:19:29+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2019-05-04T16:19:29+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
