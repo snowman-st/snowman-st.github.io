@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>编程语言 · Autora -the blog of snowman</title>
+  <title>Pytorch中in Place操作的含义 - Autora -the blog of snowman</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="snowman" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="snowman" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.55.5 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" />
-  <link href="http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="alternate" type="application/rss+xml" title="Autora -the blog of snowman" />
-  <link href="http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="feed" type="application/rss+xml" title="Autora -the blog of snowman" />
+<link rel="canonical" href="http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="编程语言" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" />
+<meta property="og:title" content="Pytorch中in Place操作的含义" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/" />
+<meta property="article:published_time" content="2019-05-05T18:23:03&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-05T18:23:03&#43;08:00"/>
 
-<meta property="og:updated_time" content="2019-05-05T18:23:03&#43;08:00"/>
+<meta itemprop="name" content="Pytorch中in Place操作的含义">
+<meta itemprop="description" content="">
 
-<meta itemprop="name" content="编程语言">
-<meta itemprop="description" content="Hugo theme even example site.">
 
+<meta itemprop="datePublished" content="2019-05-05T18:23:03&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-05T18:23:03&#43;08:00" />
+<meta itemprop="wordCount" content="181">
+
+
+
+<meta itemprop="keywords" content="编程语言," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="编程语言"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta name="twitter:title" content="Pytorch中in Place操作的含义"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -112,36 +118,75 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="archive" class="archive">
-  <div class="archive-title tag">
-        <h2 class="archive-name">编程语言</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Pytorch中in Place操作的含义</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-05 </span>
+        <div class="post-category">
+            <a href="/categories/pytorch/"> pytorch </a>
+            </div>
+        
       </div>
+    </header>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2019-05-05
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/" class="archive-post-link">
-          Pytorch中in Place操作的含义
-        </a>
-      </span>
-    </div><div class="archive-post">
-      <span class="archive-post-time">
-        2019-05-04
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="archive-post-link">
-          Pytorch基础操作
-        </a>
-      </span>
-    </div>
-</section>
-
-<nav class="pagination">
-  
-  
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#使用in-place-的好处">使用in-place 的好处</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>in-place 操作是指在改变一个tensor值得时候不经过复制操作，或者中间变量，直接在原来的内存上改变它的值。</p>
+
+<p>当pytorch中函数的后边加上后缀&rdquo;_&ldquo;的时候，就表示进行的是in-place操作，比如常见的.add__(),另外 += ，-=等也是in-place operation.</p>
+
+<h3 id="使用in-place-的好处">使用in-place 的好处</h3>
+
+<p>可以节省内存，显存，同时还可以节省申请和释放内存所耗费的时间。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">snowman</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-05-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">
+            <span class="next-text nav-default">Pytorch基础操作</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
 
@@ -173,6 +218,14 @@
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 

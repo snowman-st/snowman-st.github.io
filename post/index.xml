@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 May 2019 16:19:29 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 18:23:03 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pytorch中in Place操作的含义</title>
+      <link>http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/</link>
+      <pubDate>Sun, 05 May 2019 18:23:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Pytorch基础操作</title>
