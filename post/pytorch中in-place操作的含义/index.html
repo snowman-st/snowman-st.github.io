@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-05-05T18:23:03&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-05T18:23:03&#43;08:00" />
-<meta itemprop="wordCount" content="181">
+<meta itemprop="wordCount" content="315">
 
 
 
@@ -141,7 +141,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#什么是in-place">什么是in-place</a></li>
 <li><a href="#使用in-place-的好处">使用in-place 的好处</a></li>
+<li><a href="#结论">结论</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -149,13 +151,25 @@
   </div>
 </div>
     <div class="post-content">
-      <p>in-place 操作是指在改变一个tensor值得时候不经过复制操作，或者中间变量，直接在原来的内存上改变它的值。</p>
+      <h3 id="什么是in-place">什么是in-place</h3>
+
+<p>in-place 操作是指在改变一个tensor值得时候不经过复制操作，或者中间变量，直接在原来的内存上改变它的值。</p>
 
 <p>当pytorch中函数的后边加上后缀&rdquo;_&ldquo;的时候，就表示进行的是in-place操作，比如常见的.add__(),另外 += ，-=等也是in-place operation.</p>
 
 <h3 id="使用in-place-的好处">使用in-place 的好处</h3>
 
 <p>可以节省内存，显存，同时还可以节省申请和释放内存所耗费的时间。</p>
+
+<h3 id="结论">结论</h3>
+
+<p>在pytorch中牵扯到自动求导的的变量最好不要使用in-place操作，因为：</p>
+
+<p>1、pytorch已经实现了高效的autograd的缓冲区的释放和重用，不太需要</p>
+
+<p>2、in-place会覆盖梯度计算所需的值</p>
+
+<p>3、使用in-place需要重写计算图。</p>
     </div>
 
     <div class="post-copyright">
