@@ -6,10 +6,28 @@
     <description>Recent content on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 May 2019 19:03:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 22:11:27 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python中argparse的用法</title>
+      <link>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;p&gt;argparse是python标准库中用来处理命令行参数的库&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>算法作业之凸包问题的求解</title>
+      <link>http://localhost:1313/post/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%E4%B9%8B%E5%87%B8%E5%8C%85%E9%97%AE%E9%A2%98%E7%9A%84%E6%B1%82%E8%A7%A3/</link>
+      <pubDate>Mon, 06 May 2019 19:58:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%E4%B9%8B%E5%87%B8%E5%8C%85%E9%97%AE%E9%A2%98%E7%9A%84%E6%B1%82%E8%A7%A3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Torchtext进行文本数据预处理</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Autora -the blog of snowman</title>
+    <link>http://localhost:1313/categories/python/</link>
+    <description>Recent content in python on Autora -the blog of snowman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 May 2019 22:11:27 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python中argparse的用法</title>
+      <link>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;p&gt;argparse是python标准库中用来处理命令行参数的库&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
