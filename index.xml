@@ -6,10 +6,19 @@
     <description>Recent content on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2019 22:11:27 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 14:30:25 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>蝶恋花</title>
+      <link>http://localhost:1313/post/%E8%9D%B6%E6%81%8B%E8%8A%B1/</link>
+      <pubDate>Fri, 10 May 2019 14:30:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%9D%B6%E6%81%8B%E8%8A%B1/</guid>
+      <description>&lt;p&gt;偶然间读到这首词，太美了，&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Python中argparse的用法</title>
