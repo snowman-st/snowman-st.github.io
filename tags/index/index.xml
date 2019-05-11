@@ -13,10 +13,10 @@
     
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/post/</link>
+      <link>http://localhost:1313/post/%E5%85%A8%E7%AB%99%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Sat, 11 May 2019 16:10:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/</guid>
+      <guid>http://localhost:1313/post/%E5%85%A8%E7%AB%99%E7%B4%A2%E5%BC%95/</guid>
       <description>&lt;p&gt;限于hugo博客的主题，全站的论文结构并不能很好的呈现出一个清晰的知识结构，在此对全站文章构建索引，后期再考虑使用思维导图&lt;/p&gt;</description>
     </item>
     

@@ -20,5 +20,95 @@
       <description></description>
     </item>
     
+    <item>
+      <title>TODO</title>
+      <link>http://localhost:1313/tags/todo/</link>
+      <pubDate>Sat, 11 May 2019 16:05:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/todo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cnn</title>
+      <link>http://localhost:1313/tags/cnn/</link>
+      <pubDate>Sat, 11 May 2019 15:53:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/cnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pytorch</title>
+      <link>http://localhost:1313/tags/pytorch/</link>
+      <pubDate>Sat, 11 May 2019 15:34:08 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>深度学习框架</title>
+      <link>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Sat, 11 May 2019 15:34:08 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>宋词</title>
+      <link>http://localhost:1313/tags/%E5%AE%8B%E8%AF%8D/</link>
+      <pubDate>Fri, 10 May 2019 14:30:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E5%AE%8B%E8%AF%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编程格式</title>
+      <link>http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E7%BC%96%E7%A8%8B%E6%A0%BC%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>小技巧</title>
+      <link>http://localhost:1313/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Fri, 03 May 2019 17:00:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>http://localhost:1313/tags/tutorial/</link>
+      <pubDate>Fri, 03 May 2019 16:48:30 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>星爷</title>
+      <link>http://localhost:1313/tags/%E6%98%9F%E7%88%B7/</link>
+      <pubDate>Thu, 02 May 2019 16:33:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E6%98%9F%E7%88%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Thu, 02 May 2019 15:39:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

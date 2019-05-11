@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TODO on Autora -the blog of snowman</title>
+    <link>http://localhost:1313/tags/todo/</link>
+    <description>Recent content in TODO on Autora -the blog of snowman</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 May 2019 16:05:11 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/todo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Todolist</title>
+      <link>http://localhost:1313/post/todolist/</link>
+      <pubDate>Sat, 11 May 2019 16:05:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/todolist/</guid>
+      <description>&lt;p&gt;主要记录接下来要写的博文计划&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

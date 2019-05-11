@@ -13,11 +13,139 @@
     
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/post/</link>
+      <link>http://localhost:1313/post/%E5%85%A8%E7%AB%99%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Sat, 11 May 2019 16:10:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/</guid>
+      <guid>http://localhost:1313/post/%E5%85%A8%E7%AB%99%E7%B4%A2%E5%BC%95/</guid>
       <description>&lt;p&gt;限于hugo博客的主题，全站的论文结构并不能很好的呈现出一个清晰的知识结构，在此对全站文章构建索引，后期再考虑使用思维导图&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Todolist</title>
+      <link>http://localhost:1313/post/todolist/</link>
+      <pubDate>Sat, 11 May 2019 16:05:11 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/todolist/</guid>
+      <description>&lt;p&gt;主要记录接下来要写的博文计划&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>详解CNN</title>
+      <link>http://localhost:1313/post/%E8%AF%A6%E8%A7%A3cnn/</link>
+      <pubDate>Sat, 11 May 2019 15:53:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%AF%A6%E8%A7%A3cnn/</guid>
+      <description>&lt;p&gt;关于CNN，我将尽己所能，兼具深度和广度彻底把它讲清楚&lt;/p&gt;
+
+&lt;p&gt;关于实现部分，会在pytorch分类目录下的一篇文章中介绍，关于其在NLP中的应用部分，会在NLP分类目录下通过一篇文章来总结。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pytorch中搭建基本的网络结构</title>
+      <link>http://localhost:1313/post/pytorch%E4%B8%AD%E6%90%AD%E5%BB%BA%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 11 May 2019 15:34:08 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pytorch%E4%B8%AD%E6%90%AD%E5%BB%BA%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/</guid>
+      <description>&lt;p&gt;这篇文章主要介绍使用pytorch如何搭建基本的CNN、LSTM等基本的网络模型；以及搭建模型的几种方式。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>蝶恋花</title>
+      <link>http://localhost:1313/post/%E8%9D%B6%E6%81%8B%E8%8A%B1/</link>
+      <pubDate>Fri, 10 May 2019 14:30:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%9D%B6%E6%81%8B%E8%8A%B1/</guid>
+      <description>&lt;p&gt;偶然间读到这首词，太美了，&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python中argparse的用法</title>
+      <link>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;p&gt;argparse是python标准库中用来处理命令行参数的库&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Torchtext进行文本数据预处理</title>
+      <link>http://localhost:1313/post/torchtext%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sun, 05 May 2019 19:03:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/torchtext%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pytorch中in Place操作的含义</title>
+      <link>http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/</link>
+      <pubDate>Sun, 05 May 2019 18:23:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pytorch%E4%B8%ADin-place%E6%93%8D%E4%BD%9C%E7%9A%84%E5%90%AB%E4%B9%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pytorch基础操作</title>
+      <link>http://localhost:1313/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Sat, 04 May 2019 16:19:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pytorch%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;pytorch是一个极易初学者上手的深度学习框架。这篇博客主要介绍pytorch中tensor的定义和运算,以及pytorch中的一些基础知识。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用windows脚本文件执行批命令</title>
+      <link>http://localhost:1313/post/%E4%BD%BF%E7%94%A8windows%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%89%A7%E8%A1%8C%E6%89%B9%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 03 May 2019 17:00:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E4%BD%BF%E7%94%A8windows%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%89%A7%E8%A1%8C%E6%89%B9%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;上传博客时，每次都要输入一些相同的命令，使用windows脚本来取代这个过程&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo搭建个人博客</title>
+      <link>http://localhost:1313/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 03 May 2019 16:48:30 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;使用hugo搭建自己的博客&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>大话西游之大圣娶亲</title>
+      <link>http://localhost:1313/post/%E5%A4%A7%E8%AF%9D%E8%A5%BF%E6%B8%B8%E4%B9%8B%E5%A4%A7%E5%9C%A3%E5%A8%B6%E4%BA%B2/</link>
+      <pubDate>Thu, 02 May 2019 16:33:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%A4%A7%E8%AF%9D%E8%A5%BF%E6%B8%B8%E4%B9%8B%E5%A4%A7%E5%9C%A3%E5%A8%B6%E4%BA%B2/</guid>
+      <description>&lt;p&gt;好多人把这部电影奉为经典&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>破坏之王</title>
+      <link>http://localhost:1313/post/%E7%A0%B4%E5%9D%8F%E4%B9%8B%E7%8E%8B/</link>
+      <pubDate>Thu, 02 May 2019 16:02:25 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%A0%B4%E5%9D%8F%E4%B9%8B%E7%8E%8B/</guid>
+      <description>&lt;p&gt;星爷饰演了送外卖的阿银邂逅了练空手道的钟丽缇（阿丽），被阿丽没来由的吻后，自生情愫。由于太过弱小，遭到空手道教练的羞辱，此后发奋习武&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编者心语</title>
+      <link>http://localhost:1313/post/%E7%BC%96%E8%80%85%E5%BF%83%E8%AF%AD/</link>
+      <pubDate>Thu, 02 May 2019 15:39:16 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%BC%96%E8%80%85%E5%BF%83%E8%AF%AD/</guid>
+      <description>&lt;p&gt;谨以此献给我的母亲&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo 个人博客的搭建与配置</title>
+      <link>http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/hexo-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;这是一篇讲解搭建个人博客的教程。此部分是摘要，后面的内容是正文部分。另外本文的编辑格式是一个标准的文章格式。&lt;/p&gt;</description>
     </item>
     
   </channel>
