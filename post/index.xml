@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 May 2019 16:10:39 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2019 22:16:24 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>那些年轻时犯过的错</title>
+      <link>http://localhost:1313/post/%E9%82%A3%E4%BA%9B%E5%B9%B4%E8%BD%BB%E6%97%B6%E7%8A%AF%E8%BF%87%E7%9A%84%E9%94%99/</link>
+      <pubDate>Wed, 15 May 2019 22:16:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E9%82%A3%E4%BA%9B%E5%B9%B4%E8%BD%BB%E6%97%B6%E7%8A%AF%E8%BF%87%E7%9A%84%E9%94%99/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Index</title>

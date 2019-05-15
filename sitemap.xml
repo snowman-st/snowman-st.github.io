@@ -3,14 +3,45 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/bugs/</loc>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/bugs/</loc>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/%E9%82%A3%E4%BA%9B%E5%B9%B4%E8%BD%BB%E6%97%B6%E7%8A%AF%E8%BF%87%E7%9A%84%E9%94%99/</loc>
+    <lastmod>2019-05-15T22:16:24+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -18,18 +49,6 @@
     <lastmod>2019-05-11T16:10:39+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
