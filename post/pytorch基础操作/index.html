@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-05-04T16:19:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-04T16:19:29&#43;08:00" />
-<meta itemprop="wordCount" content="1858">
+<meta itemprop="wordCount" content="2011">
 
 
 
@@ -302,6 +302,8 @@ torch.LongTensor</p>
 <p>其中Variable 是 torch.autograd  中的一个类，初始化后可以用作模型参数，但是默认的requires_grad=False</p>
 
 <p>Parameter实际上是Variable的一个子类，但是它在torch.nn中，通常我们在模型中需要一个自定义参数并希望将她用于梯度求导时，可以使用Parameter，这个生成的参数会存在于模型的参数中，比如我们使用net.named_parameter()时会发现它跟模型其他参数一起打印出来了。与Variable不同的是该参数的默认的requires_grad的值为True。</p>
+
+<p>而pytorch中还有另外一种形式的参数：buffer，如果将参数保存到buffer中，则在optim.step的时候，它不会更新。可以通过网络(继承自nn.Module)自带的函数：self.register_buffer(&lsquo;variable_name&rsquo;,var)来设置这种参数。</p>
     </div>
 
     <div class="post-copyright">

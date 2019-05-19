@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 May 2019 22:16:24 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 May 2019 22:24:46 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的1919</title>
+      <link>http://localhost:1313/post/%E6%88%91%E7%9A%841919/</link>
+      <pubDate>Sun, 19 May 2019 22:24:46 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%88%91%E7%9A%841919/</guid>
+      <description>&lt;p&gt;1919年是中国近代史和现代史的转折点，也是中国从旧民主主义转向新民主主义革命的起点，因为这一年，中国人第一次向西方列强说——不！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>那些年轻时犯过的错</title>
