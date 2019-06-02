@@ -6,18 +6,18 @@
     <description>Recent content in python on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2019 22:11:27 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 16:47:37 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Python中argparse的用法</title>
-      <link>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</link>
-      <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
+      <title>训练自己的词向量</title>
+      <link>http://localhost:1313/post/%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%8D%E5%90%91%E9%87%8F/</link>
+      <pubDate>Thu, 30 May 2019 16:47:37 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/python%E4%B8%ADargparse%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
-      <description>&lt;p&gt;argparse是python标准库中用来处理命令行参数的库&lt;/p&gt;</description>
+      <guid>http://localhost:1313/post/%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%8D%E5%90%91%E9%87%8F/</guid>
+      <description>&lt;p&gt;处理一个自然语言任务时，我们需要通过对词的稠密向量来构建文本的表示。由于训练词向量时需要耗费大量时间和计算资源，所以我们通常可以选择一些很好的已经公开的词向量使用。当然，很多情况下需要根据当前的domain去训练更加符合该任务的词向量，才能得到文本更加准确的表示，从而提升任务的表现。本文分三大部分，首先会列出当前比较流行的中英文词向量，然后介绍使用常用工具和模型构建自己所需词向量的方法，最后介绍fine-tuning官方发布的预训练的向量的方法。&lt;/p&gt;</description>
     </item>
     
   </channel>

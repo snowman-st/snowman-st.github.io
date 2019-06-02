@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 May 2019 22:24:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 16:47:37 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Thu, 30 May 2019 16:47:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>近代史</title>

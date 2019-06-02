@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 May 2019 22:24:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 16:47:37 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NLP代码篇</title>
+      <link>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</link>
+      <pubDate>Thu, 30 May 2019 16:47:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>电影</title>
@@ -80,15 +89,6 @@
       <pubDate>Tue, 07 May 2019 22:11:27 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NLP代码篇</title>
-      <link>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</link>
-      <pubDate>Sun, 05 May 2019 19:03:40 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</guid>
       <description></description>
     </item>
     
