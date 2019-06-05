@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-05-30T16:47:37&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-30T16:47:37&#43;08:00" />
-<meta itemprop="wordCount" content="390">
+<meta itemprop="wordCount" content="677">
 
 
 
@@ -150,6 +150,10 @@
 <li><a href="#1-word2vec">1、word2vec</a>
 <ul>
 <li><a href="#1-1-加载语料库">1.1    加载语料库</a></li>
+<li><a href="#1-2-初始化模型">1.2    初始化模型</a></li>
+<li><a href="#1-3-完整使用">1.3    完整使用</a></li>
+<li><a href="#1-4-生成词典对应词向量">1.4    生成词典对应词向量</a></li>
+<li><a href="#1-5-模型的加载与保存">1.5    模型的加载与保存</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#三-如何微调官方词向量">三、如何微调官方词向量</a></li>
@@ -283,8 +287,97 @@
 
 <h3 id="1-word2vec">1、word2vec</h3>
 
+<p><a href="https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec">详细用法参考官方文档</a></p>
+
 <h4 id="1-1-加载语料库">1.1    加载语料库</h4>
 
+<p>通常我们加载的是我们自己的语料库。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gensim.models.word2vec</span> <span class="kn">import</span> <span class="n">LineSentence</span>
+<span class="n">sens</span> <span class="o">=</span> <span class="n">LineSentence</span><span class="p">(</span><span class="s1">&#39;corpus.txt&#39;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里的文件是语料经过：分词后的句子，词语之间有空格，一行代表一句话</p>
+
+<p>这里还有个比较好用的类：PathLineSentences,这个类接受的是一个文件夹，读取的是文件夹中的所有文件。</p>
+
+<h4 id="1-2-初始化模型">1.2    初始化模型</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gensim.models.word2vec</span> <span class="kn">import</span> <span class="n">Word2Vec</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Word2Vec`(<em>sentences=None</em>, <em>corpus_file=None</em>, <em>size=100</em>, <em>alpha=0.025</em>, <em>window=5</em>, <em>min_count=5</em>, <em>max_vocab_size=None</em>, <em>sample=0.001</em>, <em>seed=1</em>, <em>workers=3</em>, <em>min_alpha=0.0001</em>, <em>sg=0</em>, <em>hs=0</em>, <em>negative=5</em>, <em>ns_exponent=0.75</em>, <em>cbow_mean=1</em>, <em>hashfxn=<built-in function hash></em>, <em>iter=5</em>, <em>null_word=0</em>, <em>trim_rule=None</em>, <em>sorted_vocab=1</em>, <em>batch_words=10000</em>, <em>compute_loss=False</em>, <em>callbacks=()</em>, <em>max_final_vocab=None</em>)</p>
+
+<h4 id="1-3-完整使用">1.3    完整使用</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">sens</span><span class="p">,</span><span class="n">min_count</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1">#创建对象的过程中就train了</span>
+
+<span class="c1">#如果对已经训练好的模型额外增加语料库</span>
+<span class="n">model</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">(</span><span class="n">more_sens</span><span class="p">,</span><span class="n">update</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">more_sentences</span><span class="p">,</span><span class="n">total_examples</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">corpus_count</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="nb">iter</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="1-4-生成词典对应词向量">1.4    生成词典对应词向量</h4>
+
+<p>​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_vocab</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dataset/vocabulary1.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">my_vocab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_vocab</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span><span class="n">embedding_size</span><span class="p">))</span>
+<span class="n">lake_words</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lake_words_index</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">my_vocab</span><span class="p">):</span>
+    <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">w</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="1-5-模型的加载与保存">1.5    模型的加载与保存</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;/tmp/MyModel&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Word2Vec</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/tmp/mymodel&#39;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="三-如何微调官方词向量">三、如何微调官方词向量</h2>
     </div>
 
