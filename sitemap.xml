@@ -64,13 +64,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/bugs/</loc>
+    <loc>http://localhost:1313/tags/bugs/</loc>
     <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bugs/</loc>
+    <loc>http://localhost:1313/categories/bugs/</loc>
     <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -90,25 +90,25 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/index/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/index/</loc>
     <lastmod>2019-05-11T16:10:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/todo/</loc>
-    <lastmod>2019-05-11T16:05:11+08:00</lastmod>
+    <loc>http://localhost:1313/categories/index/</loc>
+    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/todo/</loc>
+    <lastmod>2019-05-11T16:05:11+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/todo/</loc>
     <lastmod>2019-05-11T16:05:11+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -147,13 +147,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/pytorch/</loc>
+    <loc>http://localhost:1313/tags/pytorch/</loc>
     <lastmod>2019-05-11T15:34:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/pytorch/</loc>
+    <loc>http://localhost:1313/categories/pytorch/</loc>
     <lastmod>2019-05-11T15:34:08+08:00</lastmod>
     <priority>0</priority>
   </url>
