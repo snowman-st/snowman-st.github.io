@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-06-18T22:51:55&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-18T22:51:55&#43;08:00" />
-<meta itemprop="wordCount" content="990">
+<meta itemprop="wordCount" content="1015">
 
 
 
@@ -288,16 +288,28 @@ sudo ./NVIDIA-LINUX-X86_64-410.78.run -–no-x-check –-no-nouveau-check –-no
 <p><a href="https://developer.nvidia.com/rdp/cudnn-download">去官网</a>下载对应版本的cuDnn压缩包</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">tar -zxvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
 sudo cp cuda/lib64/* /usr/local/cuda-10.0/lib64/
 sudo cp cuda/include/* /usr/local/cuda-10.0/include/
+
+<span class="nb">cd</span> /usr/local/cuda/lib64/
+sudo rm -rf libcudnn.so libcudnn.so.7
+sudo ln -s libcudnn.so.7.6.0 libcudnn.so.7
+sudo ln -s libcudnn.so.7 libcudnn.so 
+sudo ldconfig
 <span class="c1">#查看cudnn的信息</span>
 cat /usr/local/cuda/include/cudnn.h <span class="p">|</span> grep CUDNN_MAJOR -A <span class="m">2</span></code></pre></td></tr></table>
 </div>
