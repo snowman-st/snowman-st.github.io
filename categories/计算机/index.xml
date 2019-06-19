@@ -6,10 +6,19 @@
     <description>Recent content in 计算机 on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 May 2019 17:00:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 22:51:55 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>服务器配置</title>
+      <link>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 18 Jun 2019 22:51:55 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>使用windows脚本文件执行批命令</title>

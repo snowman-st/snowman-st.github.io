@@ -3,30 +3,49 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-05-30T16:47:37+08:00</lastmod>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2019-05-30T16:47:37+08:00</lastmod>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</loc>
-    <lastmod>2019-05-30T16:47:37+08:00</lastmod>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-05-30T16:47:37+08:00</lastmod>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
+    <lastmod>2019-06-18T22:51:55+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/nlp%E4%BB%A3%E7%A0%81%E7%AF%87/</loc>
     <lastmod>2019-05-30T16:47:37+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -64,13 +83,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bugs/</loc>
+    <loc>http://localhost:1313/categories/bugs/</loc>
     <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/bugs/</loc>
+    <loc>http://localhost:1313/tags/bugs/</loc>
     <lastmod>2019-05-15T22:16:24+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -90,25 +109,25 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/index/</loc>
-    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/index/</loc>
     <lastmod>2019-05-11T16:10:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/todo/</loc>
-    <lastmod>2019-05-11T16:05:11+08:00</lastmod>
+    <loc>http://localhost:1313/tags/index/</loc>
+    <lastmod>2019-05-11T16:10:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/todo/</loc>
+    <lastmod>2019-05-11T16:05:11+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/todo/</loc>
     <lastmod>2019-05-11T16:05:11+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -147,13 +166,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/pytorch/</loc>
+    <loc>http://localhost:1313/categories/pytorch/</loc>
     <lastmod>2019-05-11T15:34:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/pytorch/</loc>
+    <loc>http://localhost:1313/tags/pytorch/</loc>
     <lastmod>2019-05-11T15:34:08+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -232,12 +251,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2019-05-03T17:00:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2019-05-03T17:00:23+08:00</lastmod>
     <priority>0</priority>
   </url>
