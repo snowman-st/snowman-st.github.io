@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Jun 2019 22:51:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 09:44:20 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>水龙吟·登建康赏心亭</title>
+      <link>http://localhost:1313/post/%E6%B0%B4%E9%BE%99%E5%90%9F%E7%99%BB%E5%BB%BA%E5%BA%B7%E8%B5%8F%E5%BF%83%E4%BA%AD/</link>
+      <pubDate>Sun, 23 Jun 2019 09:44:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E6%B0%B4%E9%BE%99%E5%90%9F%E7%99%BB%E5%BB%BA%E5%BA%B7%E8%B5%8F%E5%BF%83%E4%BA%AD/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>服务器配置</title>
