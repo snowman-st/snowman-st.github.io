@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>文学</title>
-      <link>http://localhost:1313/categories/%E6%96%87%E5%AD%A6/</link>
+      <title>reading</title>
+      <link>http://localhost:1313/categories/reading/</link>
       <pubDate>Sun, 23 Jun 2019 09:44:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/categories/%E6%96%87%E5%AD%A6/</guid>
+      <guid>http://localhost:1313/categories/reading/</guid>
       <description></description>
     </item>
     
@@ -89,15 +89,6 @@
       <pubDate>Sat, 11 May 2019 15:34:08 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/pytorch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reading</title>
-      <link>http://localhost:1313/categories/reading/</link>
-      <pubDate>Fri, 10 May 2019 14:30:25 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/reading/</guid>
       <description></description>
     </item>
     
