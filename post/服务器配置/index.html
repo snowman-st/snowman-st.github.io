@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-06-18T22:51:55&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-18T22:51:55&#43;08:00" />
-<meta itemprop="wordCount" content="1035">
+<meta itemprop="wordCount" content="1234">
 
 
 
@@ -142,6 +142,11 @@
 <ul>
 <li>
 <ul>
+<li><a href="#零-配置静态ip">零、配置静态IP</a>
+<ul>
+<li><a href="#1-查看网卡名">1、查看网卡名</a></li>
+<li><a href="#2-编辑配置文件">2、编辑配置文件</a></li>
+</ul></li>
 <li><a href="#一-查看系统信息">一、查看系统信息</a>
 <ul>
 <li><a href="#1-显卡型号">1、显卡型号</a></li>
@@ -167,6 +172,50 @@
       <p>最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。</p>
 
 <p>配置环境之前要搞清系统的硬件，想安装的软件版本，以及版本之间的对应关系，所以第一步查系统的信息。</p>
+
+<h3 id="零-配置静态ip">零、配置静态IP</h3>
+
+<p>桌面版的Ubuntu很好配置，对于一台刚拿到手的纯净的Ubuntu server 的系统来说，第一步需要先让其联网。</p>
+
+<h4 id="1-查看网卡名">1、查看网卡名</h4>
+
+<p>iwconfig 或者 ipconfig</p>
+
+<p>一般查到的网卡名为： eth0/ens33</p>
+
+<h4 id="2-编辑配置文件">2、编辑配置文件</h4>
+
+<p>sudo vim /etc/network/interfaces</p>
+
+<p>假设查到的网卡名为：eth0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">auto eth0
+iface eth0 inet static
+address 192.168.31.99
+netmask 255.255.255.0
+gateway 192.168.31.1
+dns-nameservers 211.136.20.203</pre></td></tr></table>
+</div>
+</div>
+<p>然后，使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo /etc/init.d/networking restart</code></pre></td></tr></table>
+</div>
+</div>
+<p>即可，如果此时可以ping通网关，但是不能ping通外网，可以将DNS地址改为：114.114.114.114或者8.8.8.8</p>
 
 <h3 id="一-查看系统信息">一、查看系统信息</h3>
 
