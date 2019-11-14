@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-05-05T19:03:40&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-05T19:03:40&#43;08:00" />
-<meta itemprop="wordCount" content="1957">
+<meta itemprop="wordCount" content="2110">
 
 
 
@@ -338,6 +338,12 @@ torchtext.data.Iterator: 迭代器，用来生成 batch</pre></td></tr></table>
 <span class="n">test_data</span> <span class="o">=</span> <span class="n">TabularDataset</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;data/test.csv&#39;</span><span class="p">,</span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span><span class="n">skip_header</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">fields</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;review&#39;</span><span class="p">,</span><span class="n">TEXT</span><span class="p">)])</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>说明：</p>
+
+<ul>
+<li>​ （‘review&rsquo;,TEXT）：fields中文本域的排列一定是按照csv文件中的表头顺序的，这种fields设置是为了将csv文件中’review‘列与我们创建的TEXT关联起来，如果说csv文件中有某些列我们是不想用，那么可以用（‘colname’，None）在fields中声明。</li>
+</ul>
+
 <p>可以使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
