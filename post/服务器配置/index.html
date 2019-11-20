@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-06-18T22:51:55&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-18T22:51:55&#43;08:00" />
-<meta itemprop="wordCount" content="1239">
+<meta itemprop="wordCount" content="1283">
 
 
 
@@ -171,7 +171,7 @@
     <div class="post-content">
       <p>最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。</p>
 
-<p>配置环境之前要搞清系统的硬件，想安装的软件版本，以及版本之间的对应关系，所以第一步查系统的信息。</p>
+<p>配置环境之前要搞清系统的硬件，想安装的软件版本，以及pytorch版本之间的对应关系，所以第一步查系统的信息。敲黑板，很重要！！！</p>
 
 <h3 id="零-配置静态ip">零、配置静态IP</h3>
 
@@ -190,20 +190,20 @@
 <p>假设查到的网卡名为：eth0</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-vim" data-lang="vim"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">auto eth0
-iface eth0 inet static
-address 192.168.31.99
-netmask 255.255.255.0
-gateway 192.168.31.1
-dns-nameservers 211.136.20.203</pre></td></tr></table>
+<pre class="chroma"><code class="language-vim" data-lang="vim"><span class="nx">auto</span> <span class="nx">eth0</span><span class="err">
+</span><span class="err"></span><span class="nx">iface</span> <span class="nx">eth0</span> <span class="nx">inet</span> <span class="nx">static</span><span class="err">
+</span><span class="err"></span><span class="nx">address</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">31</span>.<span class="m">99</span><span class="err">
+</span><span class="err"></span><span class="nx">netmask</span> <span class="m">255</span>.<span class="m">255</span>.<span class="m">255</span>.<span class="m">0</span><span class="err">
+</span><span class="err"></span><span class="nx">gateway</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">31</span>.<span class="m">1</span><span class="err">
+</span><span class="err"></span><span class="nx">dns</span><span class="p">-</span><span class="nx">nameservers</span> <span class="nx">x</span>.<span class="nx">x</span>.<span class="nx">x</span>.<span class="nx">x</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>然后，使用</p>
@@ -226,6 +226,8 @@ dns-nameservers 211.136.20.203</pre></td></tr></table>
 <p>查出GPU是GTX 1080,根据自己想安装的cuda版本去<a href="https://www.geforce.cn/drivers">官网</a>下载对应的显卡驱动。</p>
 
 <p><img src="https://img-blog.csdnimg.cn/20190213111327130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1ZHU4MTUxMTA=,size_16,color_FFFFFF,t_70" alt="img" /></p>
+
+<p>现在cuda有10.1版本了，要求NVIDIA Driver 一定要高于418</p>
 
 <h4 id="2-ubuntu内核版本-gcc版本">2、Ubuntu内核版本，gcc版本</h4>
 
