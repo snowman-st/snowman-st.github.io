@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-12-11T07:23:04&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-11T07:23:04&#43;08:00" />
-<meta itemprop="wordCount" content="560">
+<meta itemprop="wordCount" content="1182">
 
 
 
@@ -143,6 +143,11 @@
 <ul>
 <li><a href="#一-从github上拉取frp-released-version">一、从github上拉取frp released version</a></li>
 <li><a href="#二-外网服务器运行不稳定">二、外网服务器运行不稳定</a></li>
+<li><a href="#三-番外篇">三、番外篇</a>
+<ul>
+<li><a href="#1-service">1、service</a></li>
+<li><a href="#2-systemctl">2、systemctl</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -198,18 +203,20 @@ remote_port = 20000</pre></td></tr></table>
 <p>在  /lib/systemd/system目录下，新建 sudo vim  frps.service</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">After=network.target syslog.target
+<pre class="chroma">[Unit]
+After=network.target syslog.target
 Wants=network.target
 
 [Service]
@@ -238,6 +245,88 @@ sudo systemctl status frps  <span class="c1">#查看运行日志</span></code></
 </div>
 </div>
 <p>同时，可以使用  netstat -nap | grep 19988 来查看该监听端口的运行状态。</p>
+
+<h3 id="三-番外篇">三、番外篇</h3>
+
+<p>Linux服务管理有两种方式： service 和 systemctl</p>
+
+<h4 id="1-service">1、service</h4>
+
+<p>service 命令实际上是去  /etc/init.d目录下执行相关的程序；即我们写好一个 test.sh的脚本放到 该目录下，然后：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 以下是执行该脚本的几种方式</span>
+service <span class="nb">test</span> start          <span class="c1">#启动脚本</span>
+/etc/init.d/test.sh start   <span class="c1">#启动脚本</span>
+update-rc.d <span class="nb">test</span> defaults   <span class="c1">#开机自动启动脚本</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="2-systemctl">2、systemctl</h4>
+
+<p>systemd 是Linux系统罪行的初始化系统，作用是提高系统的启动速度，尽可能启动较少的进程，尽可能并发的多进程启动。其对应的 进程管理命令是：systemctl</p>
+
+<p>首先，systemctl兼容service，即systemctl也可以去启动 /etc/init.d下的脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">test</span> start
+systemctl <span class="nb">test</span> stop
+systemctl <span class="nb">enable</span> <span class="nb">test</span>   <span class="c1"># 开机自启动</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>其次，systemctl管理 systemd 的资源 unit</p>
+
+<p>systemd 的资源unit 放在 目录 /usr/lib/systemd/system( for centos); /etc/systemd/system (for ubuntu)下面</p>
+
+<p>主要有四种类型的文件：.mount/.service/.target/.wants</p>
+
+<ul>
+<li>.mount</li>
+</ul>
+
+<p>该文件定义挂载点，等同于使用 mount的效果</p>
+
+<ul>
+<li><strong>.service</strong></li>
+</ul>
+
+<p>该文件定义了一个服务，分为[unit],[service],[install]三个小节</p>
+
+<p>[Unit]
+   Description:描述，
+   After：在network.target syslog.target启动后才启动
+   ConditionPathExists: 执行条件</p>
+
+<p>[Service]
+   EnvironmentFile:变量所在文件
+   ExecStart: 执行启动脚本
+   Restart: fail时重启</p>
+
+<p>[Install]
+   Alias:服务别名
+   WangtedBy: 多用户模式下需要的</p>
+
+<ul>
+<li>.target</li>
+</ul>
+
+<p>定义一些基础的组件，供service文件调用</p>
+
+<ul>
+<li>.wants</li>
+</ul>
+
+<p>定义了要执行文件的集合，每次执行，该文件夹里面的所有文件都会执行</p>
     </div>
 
     <div class="post-copyright">
