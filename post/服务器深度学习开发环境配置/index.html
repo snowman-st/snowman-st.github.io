@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>服务器深度学习开发环境配置 - Autora -the blog of snowman</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="snowman" /><meta name="description" content="最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.5 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="服务器深度学习开发环境配置" />
+<meta property="og:description" content="最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" />
+<meta property="article:published_time" content="2019-06-18T22:51:55&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-18T22:51:55&#43;08:00"/>
+
+<meta itemprop="name" content="服务器深度学习开发环境配置">
+<meta itemprop="description" content="最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。">
+
+
+<meta itemprop="datePublished" content="2019-06-18T22:51:55&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-18T22:51:55&#43;08:00" />
+<meta itemprop="wordCount" content="1283">
+
+
+
+<meta itemprop="keywords" content="Linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="服务器深度学习开发环境配置"/>
+<meta name="twitter:description" content="最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">SNOWMAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">SNOWMAN</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">服务器深度学习开发环境配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-18 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"> 计算机 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#零-配置静态ip">零、配置静态IP</a>
+<ul>
+<li><a href="#1-查看网卡名">1、查看网卡名</a></li>
+<li><a href="#2-编辑配置文件">2、编辑配置文件</a></li>
+</ul></li>
+<li><a href="#一-查看系统信息">一、查看系统信息</a>
+<ul>
+<li><a href="#1-显卡型号">1、显卡型号</a></li>
+<li><a href="#2-ubuntu内核版本-gcc版本">2、Ubuntu内核版本，gcc版本</a></li>
+</ul></li>
+<li><a href="#二-安装nvidia驱动">二、安装NVIDIA驱动</a>
+<ul>
+<li><a href="#1-清除之前的环境">1、清除之前的环境</a></li>
+<li><a href="#2-安装驱动">2、安装驱动</a></li>
+</ul></li>
+<li><a href="#3-安装cuda">3、安装cuda</a>
+<ul>
+<li><a href="#4-cudnn">4、cuDnn</a></li>
+</ul></li>
+<li><a href="#三-开发环境">三、开发环境</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。</p>
+
+<p>配置环境之前要搞清系统的硬件，想安装的软件版本，以及pytorch版本之间的对应关系，所以第一步查系统的信息。敲黑板，很重要！！！</p>
+
+<h3 id="零-配置静态ip">零、配置静态IP</h3>
+
+<p>桌面版的Ubuntu 16.04很好配置，对于一台刚拿到手的纯净的Ubuntu server 的系统来说，第一步需要先让其联网。</p>
+
+<h4 id="1-查看网卡名">1、查看网卡名</h4>
+
+<p>iwconfig 或者 ipconfig</p>
+
+<p>一般查到的网卡名为： eth0/ens33</p>
+
+<h4 id="2-编辑配置文件">2、编辑配置文件</h4>
+
+<p>sudo vim /etc/network/interfaces</p>
+
+<p>假设查到的网卡名为：eth0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-vim" data-lang="vim"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vim" data-lang="vim"><span class="nx">auto</span> <span class="nx">eth0</span><span class="err">
+</span><span class="err"></span><span class="nx">iface</span> <span class="nx">eth0</span> <span class="nx">inet</span> <span class="nx">static</span><span class="err">
+</span><span class="err"></span><span class="nx">address</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">31</span>.<span class="m">99</span><span class="err">
+</span><span class="err"></span><span class="nx">netmask</span> <span class="m">255</span>.<span class="m">255</span>.<span class="m">255</span>.<span class="m">0</span><span class="err">
+</span><span class="err"></span><span class="nx">gateway</span> <span class="m">192</span>.<span class="m">168</span>.<span class="m">31</span>.<span class="m">1</span><span class="err">
+</span><span class="err"></span><span class="nx">dns</span><span class="p">-</span><span class="nx">nameservers</span> <span class="nx">x</span>.<span class="nx">x</span>.<span class="nx">x</span>.<span class="nx">x</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后，使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo /etc/init.d/networking restart</code></pre></td></tr></table>
+</div>
+</div>
+<p>即可，如果此时可以ping通网关，但是不能ping通外网，可以将DNS地址改为：114.114.114.114或者8.8.8.8</p>
+
+<h3 id="一-查看系统信息">一、查看系统信息</h3>
+
+<h4 id="1-显卡型号">1、显卡型号</h4>
+
+<p>lspci -vnn | grep VGA -A 12</p>
+
+<p>查出GPU是GTX 1080,根据自己想安装的cuda版本去<a href="https://www.geforce.cn/drivers">官网</a>下载对应的显卡驱动。</p>
+
+<p><img src="https://img-blog.csdnimg.cn/20190213111327130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1ZHU4MTUxMTA=,size_16,color_FFFFFF,t_70" alt="img" /></p>
+
+<p>现在cuda有10.1版本了，要求NVIDIA Driver 一定要高于418</p>
+
+<h4 id="2-ubuntu内核版本-gcc版本">2、Ubuntu内核版本，gcc版本</h4>
+
+<p>uname -r</p>
+
+<p>gcc &ndash;version</p>
+
+<p><img src="https://img-blog.csdnimg.cn/20190213112135699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1ZHU4MTUxMTA=,size_16,color_FFFFFF,t_70" alt="img" /></p>
+
+<p>如果不满足要求需要及时升级。</p>
+
+<h3 id="二-安装nvidia驱动">二、安装NVIDIA驱动</h3>
+
+<h4 id="1-清除之前的环境">1、清除之前的环境</h4>
+
+<p>首先查看系统中是否存在其他版本的驱动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo dpkg --list | grep nvidia-*</pre></td></tr></table>
+</div>
+</div>
+<p>为避免后面的冲突，这里最好将之前的环境都清理一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get autoremove --purge nvidia*
+这里autoremove会将与其相关的依赖也都清楚，平时慎用，一般用remove即可。</code></pre></td></tr></table>
+</div>
+</div>
+<p>同时清除之前不能用的cuda</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">直接运行：
+sudo /usr/local/cuda-10.0/bin/uninstall_cuda_10.0.pl
+sudo rm -rf /usr/local/cuda-10.0/</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="2-安装驱动">2、安装驱动</h4>
+
+<ul>
+<li>首先，禁用nouveau</li>
+</ul>
+
+<p>在/etc/modprobe.d/blacklist.conf中添加   ： blacklist nouveau</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo update-initramfs -u</code></pre></td></tr></table>
+</div>
+</div>
+<p>可以使用：lsmod | grep nouveau  查看是否已经被禁用，如果没有输出信息则表明已经禁用成功。</p>
+
+<ul>
+<li>其次，关闭图形界面，由于是远程操作，这一步实际上我没做。</li>
+</ul>
+
+<p>sudo service lightdm stop</p>
+
+<ul>
+<li>最后，就可以进入到文件的下载目录了</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo chmod a+x NVIDIA-LINUX-X86_64-410.78.run
+sudo ./NVIDIA-LINUX-X86_64-410.78.run -–no-x-check –-no-nouveau-check –-no-opengl-files
+<span class="c1">#no-x-check 安装驱动时关闭X服务</span>
+<span class="c1">#no-nouveau-check 安装驱动时禁用nouveau</span>
+<span class="c1">#no-opengl-files 只安装驱动文件，不安装OpenGL文件；安装了，如果是双显卡的话，会出现重复登录的问题</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>安装的时候，会有配置选项，一般来说选择默认就好，仔细读一下</p>
+
+<p>使用  nvidia-smi  如果可以查看信息，则成功</p>
+
+<h3 id="3-安装cuda">3、安装cuda</h3>
+
+<p>​   到cuda<a href="https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=runfilelocal">官网</a>下载了10.0的版本，官方下载很慢，但是服务器配置了proxychains,直接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">proxychains wget https://developer.nvidia.com/cuda-10.0-download-archive?target_os<span class="o">=</span>Linux<span class="p">&amp;</span><span class="nv">target_arch</span><span class="o">=</span>x86_64<span class="p">&amp;</span><span class="nv">target_distro</span><span class="o">=</span>Ubuntu<span class="p">&amp;</span><span class="nv">target_version</span><span class="o">=</span><span class="m">1604</span><span class="p">&amp;</span><span class="nv">target_type</span><span class="o">=</span>runfilelocal</code></pre></td></tr></table>
+</div>
+</div>
+<p>很快完成下载</p>
+
+<p>安装过程，有一步是问是否需要再安装driver，由于已经安装，所以这一步可以选择no;其余默认</p>
+
+<h4 id="4-cudnn">4、cuDnn</h4>
+
+<p>到上一步，程序已经可以在GPU上运行了</p>
+
+<p>NVIDIA cuDNN是一个GPU加速深层神经网络原语库。它提供了在DNN应用程序中频繁出现的例程的高度优化的实现，所以为了更高速的执行我们的运算，需要安装cuDnn。</p>
+
+<p><a href="https://developer.nvidia.com/rdp/cudnn-download">去官网</a>下载对应版本的cuDnn压缩包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">tar -zxvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
+sudo cp cuda/lib64/* /usr/local/cuda-10.0/lib64/
+sudo cp cuda/include/* /usr/local/cuda-10.0/include/
+
+<span class="nb">cd</span> /usr/local/cuda/lib64/
+sudo rm -rf libcudnn.so libcudnn.so.7
+sudo ln -s libcudnn.so.7.6.0 libcudnn.so.7
+sudo ln -s libcudnn.so.7 libcudnn.so 
+sudo ldconfig
+<span class="c1">#查看cudnn的信息</span>
+cat /usr/local/cuda/include/cudnn.h <span class="p">|</span> grep CUDNN_MAJOR -A <span class="m">2</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="三-开发环境">三、开发环境</h3>
+
+<p>anaconda 的安装，装好之后创建新的环境，然后去pytorch官网上按照指示下载与cuda版本，系统版本相应的pytorch即可。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">snowman</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-06-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E6%B0%B4%E9%BE%99%E5%90%9F%E7%99%BB%E5%BB%BA%E5%BA%B7%E8%B5%8F%E5%BF%83%E4%BA%AD/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">水龙吟·登建康赏心亭</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%8D%E5%90%91%E9%87%8F/">
+            <span class="next-text nav-default">训练自己的词向量</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+   
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">snowman</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

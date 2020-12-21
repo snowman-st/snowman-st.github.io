@@ -6,10 +6,19 @@
     <description>Recent content in 计算机 on Autora -the blog of snowman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Dec 2019 07:23:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Dec 2020 20:28:55 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>建立ssh隧道</title>
+      <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%8Bssh%E9%9A%A7%E9%81%93/</link>
+      <pubDate>Sat, 19 Dec 2020 20:28:55 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%8Bssh%E9%9A%A7%E9%81%93/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>使用frp进行端口映射</title>
@@ -39,11 +48,11 @@
     </item>
     
     <item>
-      <title>服务器配置</title>
-      <link>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</link>
+      <title>服务器深度学习开发环境配置</title>
+      <link>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Tue, 18 Jun 2019 22:51:55 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</guid>
+      <guid>http://localhost:1313/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;最近实验室服务器突然出现一些问题，之前的深度学习的环境都不能用了，于是我把所有之前的环境清理掉了，重新折腾了一遍环境。&lt;/p&gt;</description>
     </item>
     
